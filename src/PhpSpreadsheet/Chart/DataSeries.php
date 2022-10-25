@@ -134,6 +134,11 @@ class DataSeries
         $this->plotOrder = $plotOrder;
         $keys = array_keys($plotValues);
         $this->plotValues = $plotValues;
+
+        if (!isset($keys[0])) {
+            $keys[0] = 'null';
+        }
+
         if (!isset($plotLabel[$keys[0]])) {
             $plotLabel[$keys[0]] = new DataSeriesValues();
         }
